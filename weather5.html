@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WeatherNow | Real-time Local Weather Info</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="weather5.css">
+  </head>
+  <body onload=startTime()>
+    <script>
+    //Digital Clock
+      function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("currentTime").innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+      }
+      function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+      }
+    </script>
+
+    <div id="title">
+      <h1>WeatherNow</h1>
+      <h3>5-Day Weather Forecast</h3>
+    </div>
+
+    <div id="localData">
+      <h3 id="location">Location: City, State, Region</h3>
+      <span id="currentTime"></span>
+    </div>
+
+    <div id="weatherBox" class="container glass">
+      <div class="col-md-2 col-md-offset-1">
+        <h2 id="day1"></h2>
+        <ul class="list-unstyled">
+          <li id="icon1"></li>
+          <li id="temp1"></li>
+          <li id="cond1"></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h2 id="day2">Day 2</h2>
+        <ul class="list-unstyled">
+          <li id="icon2"></li>
+          <li id="temp2"></li>
+          <li id="cond2"></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h2 id="day3">Day 3</h2>
+        <ul class="list-unstyled">
+          <li id="icon3"></li>
+          <li id="temp3"></li>
+          <li id="cond3"></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h2 id="day4">Day 4</h2>
+        <ul class="list-unstyled">
+          <li id="icon4"></li>
+          <li id="temp4"></li>
+          <li id="cond4"></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h2 id="day5">Day 5</h2>
+        <ul class="list-unstyled">
+          <li id="icon5"></li>
+          <li id="temp5"></li>
+          <li id="cond5"></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/Users/ebui91/weather5.js"></script>
+  </body>
+</html>

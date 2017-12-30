@@ -26,8 +26,7 @@ jQuery:
 
 ## Built With
 
-React/Redux, postgreSQL, Express/Node.
-The package.json file contains all of the dependencies required for this project.
+HTML, CSS, and JavaScript. Also used jQuery and Bootstrap.
 
 ## Authors
 
